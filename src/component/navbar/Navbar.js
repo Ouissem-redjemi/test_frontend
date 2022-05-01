@@ -5,11 +5,9 @@ import './Navbar.css'
 
 function Navbar(){
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+        <Box sx={{ flexGrow: 1 }} >
+            <AppBar position="static" style={{ backgroundColor: 'brown' }}>
                 <Toolbar variant="dense">
-                    <IconButton edge="start" color="default" aria-label="menu" sx={{ mr: 2 }}>
-                    </IconButton>
                     <h3 color="inherit">
                         Users management System
                     </h3>

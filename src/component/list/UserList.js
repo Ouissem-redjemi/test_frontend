@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Navbar from "../navbar/Navbar";
 import {Link} from "react-router-dom";
 import UserService from "../../service/UserService";
-
+const paperStyle ={padding:'10px 20px', width:900, margin :'20px auto', borderRadius:'20px'};
 function UserList (){
     const [users, setUsers] = useState([]);
     const init = ()=> {
@@ -36,13 +36,12 @@ function UserList (){
 
         return(
             <div>
-
                 <div className="container">
-                    <Paper elevation={3}>
-                        <div className="row">
-                            <h2>List Users</h2>
-                        </div>
-                        <table className="table">
+                    <div className="row">
+                        <h2>List Users</h2>
+                    </div>
+                    <Paper elevation={3} style={paperStyle}>
+                        <table className="table table-striped">
                             <thead>
                             <tr>
                                 <th scope="col">FirstName</th>
@@ -57,7 +56,7 @@ function UserList (){
                                         <td>{user.first_name}</td>
                                         <td>{user.lastname}</td>
                                         <td>
-                                            <Link to={`/users/update/${user.id}`}>
+                                            <Link to={`/users/update/${user.id}`}  style={{textDecoration: 'none'}}>
                                                 <Button color="success" startIcon={<EditIcon />}  variant="contained">Modify</Button>
                                             </Link>
                                             {' '}
@@ -71,7 +70,7 @@ function UserList (){
                         </table>
                     </Paper>
                     <div className="row">
-                        <Link to='/addUser'>
+                        <Link to='/addUser'  style={{textDecoration: 'none'}}>
                             <Button  variant="contained"  fullwidth="true" startIcon={<AddIcon />}>Add</Button>
                         </Link>
 

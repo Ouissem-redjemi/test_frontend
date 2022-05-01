@@ -9,6 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Link} from "react-router-dom";
 import {useNavigate, useParams} from "react-router";
 import UserService from "../../service/UserService";
+import '../list/UserList.css';
 
 const paperStyle ={padding:'10px 20px', width:600, margin :'20px auto', borderRadius:'20px'};
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -58,11 +59,11 @@ function AddUser(){
         }
     }, [])
         return (
-            <Container component="main" maxWidth="sm">
+            <Container component="main" maxWidth="sm" style={{paddingTop: '50px'}}>
                 <h3>Add User</h3>
                 <Paper elevation={3} style={paperStyle}>
                     <form>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={5}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     id="first_name"
@@ -96,7 +97,7 @@ function AddUser(){
                             save
                         </ColorButton>
                         {' '}
-                        <Link to={"/"}>
+                        <Link to={"/"} style={{textDecoration: 'none'}}>
                             <Button type="submit"
                                     variant="contained"
                                     endIcon={<DeleteIcon />}
